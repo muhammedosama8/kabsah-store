@@ -1,0 +1,46 @@
+.categories-div{
+    .title{
+        display: flex;
+        margin-top: 10px;
+
+        img{
+            width: 10%;
+            margin-left: 10px;
+        }
+        h4{
+            margin: auto 0;
+            font-weight: 600;
+        }
+    }
+    .categories{
+        margin-top: 1rem;
+        
+            .buttons{
+                display: none;
+            }
+        .carousel{
+            .inner-carousel{
+                display: flex;
+
+                .nav-link{
+                    min-width: 124px;
+                    height: 140px;
+                    background-size: cover;
+                    border-radius: 15px;
+                    color: white;
+                    position: relative;
+                    margin: 0 5px;
+
+                    h4{
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+        
+
+    }
+}

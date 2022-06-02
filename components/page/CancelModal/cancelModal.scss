@@ -1,0 +1,78 @@
+.cancel-modal{
+    width: 350px;
+    padding: 1rem;
+    height: 455px;
+    max-height: 551px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    border-radius: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    @media (max-width: 420px){
+        width: 95%;
+    }
+    .close-modal{
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        background: none;
+        border: none;
+    }
+    .modal-title{
+        margin-bottom: 23px;
+        .title{
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+        .sub-title{
+            font-size: 18px;
+        }
+    }
+    .modal-form{
+        margin-top: 15px;
+        .input-style{
+            position: relative;
+            margin-bottom: 30px;
+            input{
+                height: 53px;
+                border: 1px solid var(--bs-gray);
+                padding-left: 13px;
+                padding-right: 10px;
+                border-radius: 10px;
+
+                width: 100%;
+            }
+            label{
+                position: absolute;
+                right: 5px;
+                top: -13px;
+                padding: 0 1px;
+                background-color: #fff;
+            }
+            .em-req{
+                position: absolute;
+                left: 10px;
+                top: 46%;
+                transform: translate(0px, -50%);
+                color: var(--bs-gray);
+            }
+            textarea{
+                width: 100%;
+                resize:none;
+                height: 90px;
+                padding: 10px 8px;
+            }
+        }
+        .cancle-btn{
+            background-color: #dc3545;
+            padding: 10px 15px;
+            color: #fff;
+            border:none;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+        }
+    }
+}
