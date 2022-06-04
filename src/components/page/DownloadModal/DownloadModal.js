@@ -19,11 +19,11 @@ const DownloadModal = () => {
             background: 'none',
             border: 'none',
             inset: '25% 40px',
-            width: '410px',
+            width: '400px',
             overflow: 'hidden',
-            height: '400px',
+            height: '415px',
             padding: '0',
-            marginRight: 'calc(100% - 453px)',
+            marginRight: 'calc(100% - 450px)',
             top:'25%'
         },
       };

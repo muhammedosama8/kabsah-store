@@ -13,9 +13,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import ContactModal from './ContactModal/ContactModal';
 import ItemModal from './ItemModal/ItemModal';
 import DownloadModal from './DownloadModal/DownloadModal';
+import cartReducer from '../redux/cartReducer';
 
 const store = configureStore({
-    reducer:{modal: modalReducer}
+    reducer:{
+        modal: modalReducer,
+        cart: cartReducer
+    }
 });
 const Page = () => {
     return ( 

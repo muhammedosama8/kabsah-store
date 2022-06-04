@@ -179,11 +179,11 @@ const CartModal = () => {
                         </div>
                 </div>
                 <div className='buttons'>
-                    <button className='c-shopping'>متابعة التسوق</button>
+                    <button className='c-shopping' onClick={() => dispatch(cartToggle())}>متابعة التسوق</button>
                     <button className='c-order'>اكمال الطلب  </button>
                 </div>
                 </motion.div>
-            </Modal>
+        </Modal>
         </>
     );
 }

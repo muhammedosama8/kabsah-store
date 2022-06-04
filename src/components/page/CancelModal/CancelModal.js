@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import { useDispatch, useSelector} from 'react-redux';
 import { cancelToggle } from '../../redux/reducer';
-import './cancelModal.scss';
+
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-
+import './cancelModal.scss';
 
 const CancelModal = () => {
     const cancel = useSelector(state => state.modal.cancel);
@@ -19,11 +19,11 @@ const CancelModal = () => {
         content: {
             background: 'none',
             border: 'none',
-            width: '350px',
+            width: '370px',
             overflow: 'hidden',
-            height: '455px',
+            height: '465px',
             padding: '0',
-            marginRight: 'calc(100% - 404px)',
+            marginRight: 'calc(100% - 430px)',
             top: '25%'
         },
       };

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import images from '../../../assets';
 import './item.scss';
+import { addItem } from '../../redux/cartReducer';
 
 const ItemModal = () => {
     const item = useSelector(state => state.modal.item);
@@ -67,7 +68,7 @@ const ItemModal = () => {
                     </button>
                 </div>
                 <div className='addCart'>
-                    <button>أضف إلى عربة التسوق</button>
+                    <button onClick={() => addItem(item)}>أضف إلى عربة التسوق</button>
                 </div>
                 </motion.div>
             </Modal>

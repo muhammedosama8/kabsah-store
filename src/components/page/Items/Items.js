@@ -87,12 +87,11 @@ const Items = () => {
                                 <h4 className='title'>{item.title}</h4>
                                 <div className='border'></div>
                             </div>
-                            <div className='items-div'>
+                            <div className='items-div wrap'>
 
-                        
 
-                            {item.order.map((order) => (
-                                <div className='order cursor'>
+                            {item.order.map((order,index) => (
+                                <div className='order cursor' key={index}  onClick={() => dispatch(itemToggle())}>
                                     <img  draggable='false' src={order.img} alt={order.name} />
                                     <h4 className='name'>{order.name}</h4>
                                     <div className='border'></div>

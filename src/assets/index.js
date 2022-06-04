@@ -11,13 +11,21 @@ import profile from './images/profile.png';
 import egypt from './images/egypt.png';
 import download from './images/download.png';
 import categories from './icons/categories.png';
+import search from './icons/search.png';
 
 export default {
-    allCategory, bg, 
-    categoryImg1, categoryImg2, 
-    categoryImg3, profile,
-    egypt, download,
-    categories, order1,
-    order2, rize,
-    salad
+    allCategory, 
+    bg, 
+    categoryImg1, 
+    categoryImg2, 
+    categoryImg3, 
+    profile,
+    egypt, 
+    download,
+    categories, 
+    order1,
+    order2, 
+    rize,
+    salad, 
+    search,
 }
