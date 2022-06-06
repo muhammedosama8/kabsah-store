@@ -25,7 +25,7 @@ const ContactModal = () => {
             overflow: 'hidden',
             padding: '0',
             position: 'initial',
-            marginTop: '5%',
+            marginTop: '18%',
         },
       };
     return (  
@@ -49,9 +49,8 @@ const ContactModal = () => {
                     <p className='title'>المشويات والأكل الخليجي والسعودي والولائم والعزائم والأرز الخليجي بأنواعه والمشويات</p>
                     <p className='subtitle'>قم بالتمرير لأسفل للحصول على مزيد من تفاصيل الاتصال</p>
                     <motion.div
-                    animate={{ scale: (.9,1.4) }}
-                    transition={{ ease: "easeInOut",
-                        repeat: Infinity,duration: 1}}>
+                    animate={{ y: [50,0], scale: (.8,1.4) }}
+                    transition={{duration: 1}}>
                     <FontAwesomeIcon icon={faArrowDown}/>
                     </motion.div>
                 </div>

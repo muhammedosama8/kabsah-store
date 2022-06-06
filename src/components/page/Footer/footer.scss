@@ -5,7 +5,9 @@
     border: none;
     margin-top: 2rem;
     box-shadow: 0 4px 24px 0 rgb(0 0 0 / 8%);
-
+    @media (max-width:487px) {
+        padding: 20px 10px 10px;
+    }
     .footer-image{
         width: 50%;
         margin: auto;
@@ -38,13 +40,15 @@
         button{
             background: none;
             border: none;
-            padding: 2px 5px;
+            font-size: .9rem;
+            padding: 1px 3px;
             border-left: 1px solid var(--text-color);
         }
         a{
             text-decoration: none;
             color: var(--text-color);
-            padding: 5px 2px;
+            padding: 3px;
+            font-size: .9rem;
             
         }
     }

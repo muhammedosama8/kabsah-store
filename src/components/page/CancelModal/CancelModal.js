@@ -24,7 +24,7 @@ const CancelModal = () => {
             overflow: 'hidden',
             padding: '0',
             position: 'initial',
-            marginTop: '5%',
+            marginTop: '15%',
         },
       };
     return (  

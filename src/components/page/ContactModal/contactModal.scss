@@ -7,12 +7,13 @@
     position: absolute;
     left: 0;
     border-radius: 15px;
+    margin-left: 15px;
     overflow-y: scroll;
     overflow-x: hidden;
     
     @media (max-width: 420px) {
-        margin: 0;
         width: 90%;
+        top: 25%;
     }
 
     .close-modal{
