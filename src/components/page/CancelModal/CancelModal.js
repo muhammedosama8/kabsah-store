@@ -19,12 +19,12 @@ const CancelModal = () => {
         content: {
             background: 'none',
             border: 'none',
-            width: '370px',
+            width: '389px',
+            maxHeight: '550px',
             overflow: 'hidden',
-            height: '465px',
             padding: '0',
-            marginRight: 'calc(100% - 430px)',
-            top: '25%'
+            position: 'initial',
+            marginTop: '5%',
         },
       };
     return (  

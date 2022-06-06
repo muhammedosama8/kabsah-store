@@ -27,10 +27,8 @@ const CartModal = () => {
             maxHeight: '550px',
             overflow: 'hidden',
             padding: '0',
-            /* marginRight: 'calc(100% - 443px)', */
             position: 'initial',
-            /* top: '25%' */
-            marginTop: '5%'
+            marginTop: '5%',
         },
       };
     return (  
@@ -46,7 +44,7 @@ const CartModal = () => {
             transition={{duration: .5}}
             className='cart-modal'
             >
-                <button onClick={() => dispatch(cartToggle())} className='close-modal'>
+                <button onClick={()=> dispatch(cartToggle())} className='close-modal'>
                     <FontAwesomeIcon icon={faTimes} />
                 </button>
                 <div className='modal-header'>

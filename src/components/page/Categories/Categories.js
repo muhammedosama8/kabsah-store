@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import images from '../../../assets'; 
 import './categories.scss';
@@ -7,6 +7,8 @@ import { categoriesData } from '../../data/data';
 
 
 const Categories = () => {
+    const ref =useRef();
+    const scroll = ((categoriesData.length+1)*62);
 
     return ( 
     <> 
@@ -19,10 +21,11 @@ const Categories = () => {
             <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <motion.div 
                 className='carousel' 
+                ref={ref}
                     whileTap={{cursor: 'grabbing'}}>
                     <motion.div className='inner-carousel'
                         drag='x'
-                        dragConstraints={{left:0 , right: 273}}>
+                        dragConstraints={{left:-10, right:scroll }}>
 
                         <li className="nav-item " role="presentation"
                         >
@@ -39,6 +42,7 @@ const Categories = () => {
                                 </h4>
                                 </button>
                         </li>
+                        
                         {categoriesData.map((item,index) => (
                             <li key={index} className="nav-item" role="presentation">
                                 <button className="nav-link" 
@@ -54,7 +58,7 @@ const Categories = () => {
                                 </h4>
                                 </button>
                             </li>
-                        ))}
+    ))}
 
                     </motion.div>
                 </motion.div>

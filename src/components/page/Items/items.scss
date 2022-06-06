@@ -110,5 +110,8 @@
     flex-wrap: wrap;
     .order{
         max-width: 180px;
+        @media (max-width: 487px) {
+            max-width: 160px;
+        }
     }
 }

@@ -10,7 +10,7 @@ const Header = () => {
         <>
             <div className='header' id='header'>
                 <div className='cover'>
-                    <img  draggable='false' src={images.bg} alt={images.bg} />
+                    <img draggable='false' src={images.bg} alt={images.bg} />
                 </div>
                 <div className='shadow'></div>
                 <div className='profile'>
@@ -22,14 +22,14 @@ const Header = () => {
                 </div>
                 <div className='download-lang'>
                     <div className='lang'>
-                          <a >
+                          <a href='#'>
                             <img  draggable='false' src={images.egypt} alt={images.egypt} />
                             عربي
                         </a>
 
                     </div>
                     <div className='download'>
-                          <a onClick={() => dispatch(downloadToggle())}>
+                          <a href='#' onClick={() => dispatch(downloadToggle())}>
                             <img  draggable='false' src={images.download} alt={images.download} />
                             تحميل التطبيق
                         </a>

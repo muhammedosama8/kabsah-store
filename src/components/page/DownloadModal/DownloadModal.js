@@ -18,13 +18,12 @@ const DownloadModal = () => {
         content: {
             background: 'none',
             border: 'none',
-            inset: '25% 40px',
-            width: '400px',
+            width: '389px',
+            maxHeight: '550px',
             overflow: 'hidden',
-            height: '415px',
             padding: '0',
-            marginRight: 'calc(100% - 450px)',
-            top:'25%'
+            position: 'initial',
+            marginTop: '5%',
         },
       };
     return (  

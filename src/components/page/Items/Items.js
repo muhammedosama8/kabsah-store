@@ -9,7 +9,7 @@ import { itemToggle } from '../../redux/reducer';
 
 
 const Items = () => {
-    const cc =useRef();
+    const ref =useRef();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const Items = () => {
             role="tabpanel" 
             aria-labelledby='pills-allCategories-tab'>
             {categoriesData.map((item,index) => {
-               const m = (item.order.length*160+item.order.length*10)/2 -200;
+               const scroll = (item.order.length*160+item.order.length*10)/2 -170;
                
                return <div key={index} className="nav-item" role="presentation">
                     <div className='item '>
@@ -47,12 +47,12 @@ const Items = () => {
                         </div>
                         <motion.div 
                         className='carousel' 
-                        ref={cc}
+                        ref={ref}
                         
                         whileTap={{cursor: 'grabbing'}}>
                     <motion.div className='inner-carousel'
                         drag='x'
-                        dragConstraints={{left: -m , right: m}}>
+                        dragConstraints={{left: -scroll , right: scroll}}>
                         <div className='items-div'>
                             {item.order.map((order,index) => (
                                 <div key={index} onClick={() => dispatch(itemToggle())} className='order cursor'>

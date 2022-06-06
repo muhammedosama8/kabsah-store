@@ -20,13 +20,12 @@ const ContactModal = () => {
         content: {
             background: 'none',
             border: 'none',
-            inset: '25% 40px',
-            width: '330px',
+            width: '389px',
+            maxHeight: '550px',
             overflow: 'hidden',
-            height: '400px',
             padding: '0',
-            marginRight: 'calc(100% - 390px)',
-            top:'25%'
+            position: 'initial',
+            marginTop: '5%',
         },
       };
     return (  
