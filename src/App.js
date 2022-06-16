@@ -1,28 +1,24 @@
-/* import images from './assets'; */
-
+import React, { useEffect, useState } from 'react';
 import {BgImage, Page} from './components';
 import './App.scss';
-import { useEffect, useState } from 'react';
 import SkeletonPage from './components/Skeleton/Skeleton';
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   
   useEffect(()=>{
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false)
-    } ,2000)
-  },[])
+    setLoading(false);
+  })
   
   return (
-      <div>
-      {loading && <SkeletonPage />}
-        {!loading && <div  className="App">
-              <BgImage />
-              <Page />
-          </div>}
-      </div>
+    <>
+    {loading && <SkeletonPage />}
+    {!loading && <div  className="App">
+                    <BgImage />
+                    <Page />
+                 </div>
+    }
+    </>
   );
 }
 

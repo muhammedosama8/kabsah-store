@@ -1,0 +1,40 @@
+
+.skeleton{
+    [aria-live]:nth-child(2){
+        .react-loading-skeleton{
+            width: 26.5%;
+            position: absolute;
+            left: 9px;
+            top: 4px;
+            &:nth-of-type(2){
+                top: 110px;
+            }
+            &:nth-of-type(3){
+                top: 220px;
+            }
+            &:nth-of-type(4){
+                top: 330px;
+            }
+            &:nth-of-type(5){
+                top: 440px;
+            }
+            &:nth-of-type(6){
+                top: 550px;
+            }
+            &:nth-of-type(7){
+                top: 660px;
+            }
+        }
+    }
+
+    @media (max-width: 400px) {
+        [aria-live]:nth-child(1){
+            display: none;
+        }
+        [aria-live]:nth-child(2){
+            .react-loading-skeleton{
+                width: 94%;
+            }
+        }
+    }
+}
