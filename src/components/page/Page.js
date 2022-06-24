@@ -14,6 +14,7 @@ import ContactModal from './ContactModal/ContactModal';
 import ItemModal from './ItemModal/ItemModal';
 import DownloadModal from './DownloadModal/DownloadModal';
 import cartReducer from '../redux/cartReducer';
+import CartModalStep2 from './CartModal/OrderSteps/CartModalStep2';
 
 const store = configureStore({
     reducer:{
@@ -35,6 +36,7 @@ const Page = () => {
                 <CancelModal />
                 <ItemModal />
                 <DownloadModal />
+                <CartModalStep2 />
             </div>
         </Provider>
      );

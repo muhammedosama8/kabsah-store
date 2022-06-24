@@ -19,12 +19,13 @@
         background: none;
         border: none;
         cursor: pointer;
+        z-index: 99;
     }
     .modal-header{
         position: sticky;
         padding: 1rem;
         display: block;
-        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+        box-shadow: 0 0.1rem 0.35rem rgb(0 0 0 / 6%);
         .title{
             font-weight: 600;
             margin-bottom: 0;
@@ -32,14 +33,24 @@
         .total-price{
             span{
                 margin-left: 4px;
-                font-weight: 600;
+                font-weight: 500;
                 font-size: 18px;
+            }
+            .amount{
+                font-weight: 600;
             }
         }
     }
     .content{
         height: 378px;
-    overflow: scroll;
+        overflow: scroll;
+        position: relative;
+        .empty{
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translate(0 , -50%);
+        }
         .list{
             display: flex;
             justify-content: space-around;
@@ -79,17 +90,19 @@
                 .controll{
                     width: max-content;
                     height: fit-content;
+                    margin-right: 10px;
                     display: flex;
                     justify-content: space-around;
                     border: 1px solid var(--gray-color);
                     border-radius: 10px;
-                    input{
-                        width: 40px;
+                    .qunt{
+                        width: 30px;
                         border: none;
+                        margin: auto;
                         text-align: center;
                     }
                     button{
-                        padding: 0 15px;
+                        padding: 0 10px;
                         height: 33px;
                         border: none;
                         background: none;

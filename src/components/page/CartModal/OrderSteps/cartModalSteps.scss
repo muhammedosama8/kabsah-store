@@ -1,0 +1,44 @@
+@import '../cartModal.scss';
+.cart-modal{
+.content{
+    padding: 1rem;
+    justify-content: space-between;
+    .delivery,
+    .total-price{
+        justify-content: space-around;
+    }
+    .title{
+        font-size: 17px;
+        font-weight: 600;
+        margin-left: 20px;
+    }
+}
+hr{
+    width: 85%;
+    margin: auto;
+}
+.discount{
+    padding: 1rem;
+    input{
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid #dedede;
+        width: 80%;
+        margin-left: 15px;
+    }
+    button{
+        color: red;
+        font-weight: 600;
+        background: none;
+        border: none;
+    }
+}
+.buttons{
+    .back{
+        background-color: #dedede;
+    }
+    .next{
+        background-color: var(--primary-color);
+    }
+}
+}

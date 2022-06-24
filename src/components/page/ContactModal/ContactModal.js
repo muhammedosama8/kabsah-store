@@ -68,8 +68,8 @@ const ContactModal = () => {
                     اتصل الآن +2012345123421
                     <div><FontAwesomeIcon icon={faPhone} /></div>
                     </a>
-                      <a  className='close'>
-                    إغلاق</a>
+                      <button onClick={() => dispatch(contactToggle())}  className='close'>
+                    إغلاق</button>
                 </div>
                 </motion.div>
             </Modal>

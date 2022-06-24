@@ -1,4 +1,4 @@
-import allCategory from './images/categoryImagesall.png';
+import allCategory from './icons/categoryImagesall.png';
 import categoryImg1 from './images/categoryImg1.jpg';
 import categoryImg2 from './images/categoryImg2.jpg';
 import categoryImg3 from './images/categoryImg3.jpg';
@@ -8,8 +8,8 @@ import order2 from './images/order2.jpeg';
 import rize from './images/riz.jpg';
 import salad from './images/salad.jpg';
 import profile from './images/profile.png';
-import egypt from './images/egypt.png';
-import download from './images/download.png';
+import egypt from './icons/egypt.png';
+import download from './icons/download.png';
 import categories from './icons/categories.png';
 import search from './icons/search.png';
 

@@ -5,12 +5,12 @@ import { decreseQunt, increseQunt, itemToggle } from '../../redux/reducer';
 import { faTimes, faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-import images from '../../../assets';
 import './item.scss';
 import { addItem } from '../../redux/cartReducer';
 
 const ItemModal = () => {
     const item = useSelector(state => state.modal.item);
+    const itemSelected = useSelector(state => state.cart.itemSelected);
     const quantity = useSelector(state => state.modal.quantity);
     
     const dispatch = useDispatch();
@@ -47,16 +47,15 @@ const ItemModal = () => {
                     <FontAwesomeIcon icon={faTimes} />
                 </button>
                 <div className='item-img'>
-                    <img  draggable='false' src={images.order1} alt='item' />
+                    <img  draggable='false' src={itemSelected.img} alt='item' />
                 </div>
                 <div className='info'>
-                    <h2 className='title'>وجبة ميكس لحوم</h2>
-                    <h3 className='price d-flex'>150<p>ج.م</p></h3>
+                    <h2 className='title'>{itemSelected.name}</h2>
+                    <h3 className='price d-flex'>{itemSelected.price}<p>ج.م</p></h3>
                 </div>
                 <div className='content'>
                     <p>الوصف</p>
-                    <p className='description'>
-                    ربع كيلو كفته مشوي + برع كيلو لحمه مندي او محمر + ارز البسمتي + صوص + تومية + عيش</p>
+                    <p className='description'>{itemSelected.description}</p>
                 </div>
                 <div className='quantity'>
                     <button onClick={()=> dispatch(increseQunt())}>
@@ -68,7 +67,12 @@ const ItemModal = () => {
                     </button>
                 </div>
                 <div className='addCart'>
-                    <button onClick={() => addItem(item)}>أضف إلى عربة التسوق</button>
+                    <button onClick={
+                        ()=>{dispatch(addItem({name:itemSelected.name ,quantity ,price:itemSelected.price, img:itemSelected.img}))
+                              dispatch(itemToggle())
+                            }}>
+                            أضف إلى عربة التسوق
+                            </button>
                 </div>
                 </motion.div>
             </Modal>

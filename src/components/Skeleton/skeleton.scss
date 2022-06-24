@@ -2,9 +2,10 @@
 .skeleton{
     [aria-live]:nth-child(2){
         .react-loading-skeleton{
-            width: 26.5%;
+            width: 400px;
             position: absolute;
-            left: 9px;
+            left: 10px;
+            margin-right: 10px;
             top: 4px;
             &:nth-of-type(2){
                 top: 110px;

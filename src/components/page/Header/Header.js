@@ -22,17 +22,17 @@ const Header = () => {
                 </div>
                 <div className='download-lang'>
                     <div className='lang'>
-                          <a href='#'>
+                          <button href={'#'}>
                             <img  draggable='false' src={images.egypt} alt={images.egypt} />
                             عربي
-                        </a>
+                        </button>
 
                     </div>
                     <div className='download'>
-                          <a href='#' onClick={() => dispatch(downloadToggle())}>
+                          <button onClick={() => dispatch(downloadToggle())}>
                             <img  draggable='false' src={images.download} alt={images.download} />
                             تحميل التطبيق
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

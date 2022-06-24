@@ -6,6 +6,7 @@ import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch } from 'react-redux';
 import './items.scss';
 import { itemToggle } from '../../redux/reducer';
+import {addItemSelected} from '../../redux/cartReducer';
 
 
 const Items = () => {
@@ -56,12 +57,14 @@ const Items = () => {
                         <div className='items-div'>
                             {item.order.map((order,index) => (
                                 <div key={index} onClick={() => dispatch(itemToggle())} className='order cursor'>
+                                <div onClick={()=> dispatch(addItemSelected(order))}>
                                     <img  draggable='false' src={order.img} alt={order.name} />
                                     <h4 className='name'>{order.name}</h4>
                                     <div className='border'></div>
                                     <p className='price'>{order.price}
                                     <span>ج.م</span>
                                     </p>
+                                </div>
                                 </div>
                             ))}
                         </div>
@@ -73,8 +76,8 @@ const Items = () => {
             </div>
 
             
-            {categoriesData.map((item) => (
-                <motion.div  key={item.name}
+            {categoriesData.map((item,index) => (
+                <motion.div  key={index}
                     animate={{ visible: { opacity: 1, x: 0 } }}
                     transition={{ delay: 1 }}>
                     <div key={item.name} className="tab-pane fade item" 
@@ -92,12 +95,14 @@ const Items = () => {
 
                             {item.order.map((order,index) => (
                                 <div className='order cursor' key={index}  onClick={() => dispatch(itemToggle())}>
+                                <div onClick={()=> dispatch(addItemSelected(order))}>
                                     <img  draggable='false' src={order.img} alt={order.name} />
                                     <h4 className='name'>{order.name}</h4>
                                     <div className='border'></div>
                                     <p className='price'>{order.price}
                                     <span>ج.م</span>
                                     </p>
+                                </div>
                                 </div>
                             ))}
                         </div>

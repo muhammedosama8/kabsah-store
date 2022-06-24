@@ -1,11 +1,12 @@
 import React from 'react';
 import './navbar.scss';
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { cartToggle, contactToggle, cancelToggle } from '../../redux/reducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faShoppingCart, faStore, faUndo } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
+    const totalItems = useSelector(state => state.cart.totalItems)
     const dispatch = useDispatch();
     
     return ( 
@@ -17,10 +18,11 @@ const Navbar = () => {
                         <span>الرئيسية</span>
                     </button>
                 </div>
-                <div className='menu-item'>
-                    <button onClick={() => dispatch(cartToggle())} className='menu-item-link'>
+                <div className='menu-item '>
+                    <button onClick={() => dispatch(cartToggle())} className='menu-item-link cart'>
                     <FontAwesomeIcon className='link-icon' icon={faShoppingCart} />
                         <span>عربه التسوق</span>
+                        <span className='total-items'>{totalItems ? totalItems : ''}</span>
                     </button>
                 </div>
                 <div onClick={() => dispatch(contactToggle())} className='menu-item'>

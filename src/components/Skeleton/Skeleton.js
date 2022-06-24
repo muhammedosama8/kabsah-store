@@ -7,7 +7,7 @@ import './skeleton.scss';
 const SkeletonPage = () => {
     return(
         <div className='skeleton'>
-            <Skeleton duration={1} height={'100vh'} count={1} width={'72.5%'} />
+            <Skeleton duration={1} height={'100vh'} count={1} width={'calc(100% - 420px)'} />
             <Skeleton duration={1} height={100} count={7} />
         </div>
     )

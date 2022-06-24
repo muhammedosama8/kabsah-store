@@ -23,3 +23,7 @@ a{
 ::-webkit-scrollbar {
   display: none;
 }
+button[disabled]{
+  opacity: .4;
+  cursor: no-drop;
+}
