@@ -56,7 +56,7 @@ const CartModalStepTwo = () => {
                     <h3 className='title'> اكمال الطلب</h3>
                     <span>قم بإدخال البيانات لاكمال الطلب</span>
                 </div>
-                <div className='content d-flex' style={{height: '105px'}}>
+                <div className='content d-flex' style={{height: '120px'}}>
                     <div className='total-price'>
                         <p className='title'>المجموع الكلي</p>
                         <p className='title'>{totalPriceWithDelivery} ج.م.</p>
