@@ -1,17 +1,20 @@
 import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import { useDispatch, useSelector} from 'react-redux';
-import { cartToggle, stepTwoToggle } from '../../../redux/reducer';
+import { cartToggle, stepThreeToggle, stepTwoToggle } from '../../../redux/reducer';
 import { faTimes} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import './cartModalSteps.scss';
 
 
-const CartModalStep2 = () => {
+const CartModalStepTwo = () => {
     const stepTwo = useSelector(state => state.modal.stepTwo);
+    const totalPrice = useSelector(state => state.cart.totalPrice)
+    const delivery = 10
     const dispatch = useDispatch();
 
+    const totalPriceWithDelivery = +totalPrice+delivery;
     const backStep= () =>{
         dispatch(cartToggle())
         dispatch(stepTwoToggle())
@@ -56,16 +59,16 @@ const CartModalStep2 = () => {
                 <div className='content d-flex' style={{height: '105px'}}>
                     <div className='total-price'>
                         <p className='title'>المجموع الكلي</p>
-                        <p className='title'>40.00 ج.م.</p>
+                        <p className='title'>{totalPriceWithDelivery} ج.م.</p>
                     </div>
                     <div className='delivery'>
                         <div className='d-flex'>
                             <p className='title'>التوصيل</p>
-                            <p>0.00 ج.م.</p>
+                            <p>{delivery} ج.م.</p>
                         </div>
                         <div className='d-flex'>
                             <p className='title'>المجموع الفرعي</p>
-                            <p>40.00 ج.م.</p>
+                            <p>{totalPrice} ج.م.</p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +79,11 @@ const CartModalStep2 = () => {
                 </div>
                 <div className='buttons'>
                     <button className='back' onClick={()=> backStep()}>رجوع </button>
-                    <button className='next'> الخطوة التالية  </button>
+                    <button className='next' onClick={() => {
+                        dispatch(stepTwoToggle())
+                        dispatch(stepThreeToggle())
+                        }
+                    }> الخطوة التالية  </button>
                 </div>
                 </motion.div>
         </Modal>
@@ -84,4 +91,4 @@ const CartModalStep2 = () => {
     );
 }
  
-export default CartModalStep2;
+export default CartModalStepTwo;

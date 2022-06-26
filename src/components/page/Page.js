@@ -14,7 +14,8 @@ import ContactModal from './ContactModal/ContactModal';
 import ItemModal from './ItemModal/ItemModal';
 import DownloadModal from './DownloadModal/DownloadModal';
 import cartReducer from '../redux/cartReducer';
-import CartModalStep2 from './CartModal/OrderSteps/CartModalStep2';
+import CartModalStepTwo from './CartModal/OrderSteps/CartModalStepTwo';
+import CartModalStepThree from './CartModal/OrderSteps/CartModalStepThree';
 
 const store = configureStore({
     reducer:{
@@ -31,15 +32,23 @@ const Page = () => {
                 <Categories />
                 <Items />
                 <Footer />
-                <CartModal />
-                <ContactModal />
-                <CancelModal />
-                <ItemModal />
-                <DownloadModal />
-                <CartModalStep2 />
+                <Modals />
             </div>
         </Provider>
      );
+}
+const Modals =() =>{
+    return(
+        <>
+        <CartModal />
+        <ContactModal />
+        <CancelModal />
+        <ItemModal />
+        <DownloadModal />
+        <CartModalStepTwo />
+        <CartModalStepThree />
+        </>
+    )
 }
  
 export default Page;

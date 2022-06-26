@@ -7,7 +7,9 @@ const initialState= {
     item: false,
     download: false,
     quantity: 1,
-    stepTwo: false
+    stepTwo: false,
+    stepThree: false,
+    myAddress:{}
 }
 
  const modalReducer = createSlice({
@@ -20,10 +22,14 @@ const initialState= {
         downloadToggle: (state) =>{state.download = !state.download},
         itemToggle: (state) =>{state.item = !state.item},
         stepTwoToggle: (state) =>{state.stepTwo = !state.stepTwo},
+        stepThreeToggle: (state) =>{state.stepThree = !state.stepThree},
         increseQunt: (state) =>{state.quantity++},
         decreseQunt: (state) =>{state.quantity--},
+        address: (state, action) => {
+            return {...state, myAddress: action.payload}
+        },
     }
 })
 
-export const {cartToggle, contactToggle, cancelToggle, itemToggle, increseQunt, decreseQunt, downloadToggle, stepTwoToggle} = modalReducer.actions;
+export const {cartToggle, contactToggle, cancelToggle, itemToggle, increseQunt, decreseQunt, downloadToggle, stepTwoToggle, stepThreeToggle, address} = modalReducer.actions;
 export default modalReducer.reducer;

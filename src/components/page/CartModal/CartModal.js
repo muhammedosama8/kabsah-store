@@ -6,7 +6,7 @@ import './cartModal.scss';
 import { faTimes, faPlus, faMinus, faTrash} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
-import {deleteItem, increseQuntity, decreseQuntity} from '../../redux/cartReducer';
+import {deleteItem, increseQuntity, decreseQuntity, totalPrice} from '../../redux/cartReducer';
 
 
 const CartModal = () => {
@@ -14,12 +14,13 @@ const CartModal = () => {
     const cartItems = useSelector(state => state.cart.cart)
     const dispatch = useDispatch();
 
-   const totalPrice = cartItems.reduce((a,i) => a + i.quantity*i.price, 0).toFixed(2)
+   const totalItemsPrice = cartItems.reduce((a,i) => a + i.quantity*i.price, 0).toFixed(2)
    const nextStep= () =>{
         dispatch(cartToggle())
         dispatch(stepTwoToggle())
    }
     useEffect(()=>{
+        dispatch(totalPrice(totalItemsPrice))
         Modal.setAppElement('body');
     })
     
@@ -55,7 +56,7 @@ const CartModal = () => {
                     <h3 className='title'>سلة التسوق</h3>
                     <div className='total-price'>
                         <span>المجموع الفرعي:</span>
-                        <span className='amount'>{totalPrice} ج.م</span>
+                        <span className='amount'>{totalItemsPrice} ج.م</span>
                     </div>
                 </div>
                 <div className='content'>
@@ -73,12 +74,12 @@ const CartModal = () => {
                                 </div>
                                 <div className='controll'>
                                     <button className='increse'
-                                    onClick={()=> dispatch(increseQuntity(item.quantity))}>
+                                    onClick={()=> dispatch(increseQuntity(item))}>
                                     <FontAwesomeIcon icon={faPlus} />
                                     </button>
                                     <p className='qunt'>{item.quantity}</p>
                                     <button className='decrese'
-                                    onClick={()=> dispatch(decreseQuntity(item.quantity))}>
+                                    onClick={()=> dispatch(decreseQuntity(item))}>
                                     <FontAwesomeIcon icon={faMinus} />
                                     </button>
                                 </div>
